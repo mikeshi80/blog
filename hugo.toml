@@ -1,4 +1,4 @@
-baseURL = 'https://www.mikeshi.me/blog/'
+baseURL = 'https://www.mikeshi.me/'
 languageCode = 'zh-cn'
 title = 'Mike Shi Blog'
 theme = 'diary'
