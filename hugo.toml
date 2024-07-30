@@ -1,0 +1,9 @@
+baseURL = 'https://blog.mikeshi.me/'
+languageCode = 'zh-cn'
+title = 'Mike Shi Blog'
+theme = 'diary'
+[params]
+  author = 'Mike Shi'
+  subtitle = "Mike Shi的技术自留地"
+  [params.contract]
+  email = "mikeshi80@gmail.com"
