@@ -2,6 +2,7 @@ baseURL = 'https://www.mikeshi.me/'
 languageCode = 'zh-cn'
 title = 'Mike Shi Blog'
 theme = 'diary'
+googleAnalytics = "G-YM6RPDDXGZ"
 [params]
   author = 'Mike Shi'
   subtitle = "Mike Shi的技术自留地"
