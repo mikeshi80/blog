@@ -13,17 +13,17 @@ theme = 'diary'
     ID = 'G-YM6RPDDXGZ'
 [[menu.main]]
 url = "/categories"
-name = "分类"
+name = "🗃分类"
 weight = 2
 [[menu.main]]
 url = "/tags"
-name = "标签"
+name = "🏷标签"
 weight = 3
 [[menu.main]]
 url = "/posts"
-name = "归档"
+name = "📋归档"
 weight = 1
 [[menu.main]]
 url = "/index.xml"
-name = "RSS"
+name = "📶 RSS"
 weight = 4
