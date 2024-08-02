@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Image on Mike Shi Blog</title>
+    <link>https://www.mikeshi.me/tags/image/</link>
+    <description>Recent content in Image on Mike Shi Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 02 Aug 2024 17:38:10 +0800</lastBuildDate>
+    <atom:link href="https://www.mikeshi.me/tags/image/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何对一个SD CARD的镜像进行瘦身</title>
+      <link>https://www.mikeshi.me/posts/how-to-slim-down-sdcard-image/</link>
+      <pubDate>Fri, 02 Aug 2024 17:38:10 +0800</pubDate>
+      <guid>https://www.mikeshi.me/posts/how-to-slim-down-sdcard-image/</guid>
+      <description>本文介绍了如果制作一个树莓派或类似产品的系统镜像，并对其进行瘦身，以便在更小尺寸SDCARD上使用。</description>
+    </item>
+  </channel>
+</rss>

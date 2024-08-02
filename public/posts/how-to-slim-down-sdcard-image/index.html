@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html><head>
+<title>如何对一个SD CARD的镜像进行瘦身</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-YM6RPDDXGZ"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-YM6RPDDXGZ');
+        }
+      </script>
+    
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+      <script src="/js/toc.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
+
+
+<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Material+Icons">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    📋归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    🗃分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    🏷标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    📶 RSS
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b5%b7%e5%9b%a0" class="nav-起因">
+									起因
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88" class="nav-解决方案">
+									解决方案
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e9%95%9c%e5%83%8f%e6%8f%90%e5%8f%96" class="nav-镜像提取">
+									镜像提取
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%95%9c%e5%83%8f%e7%98%a6%e8%ba%ab" class="nav-镜像瘦身">
+									镜像瘦身
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85-pishrink" class="nav-安装-pishrink">
+									安装 PiShrink
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8-pishrink" class="nav-使用-pishrink">
+									使用 PiShrink
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%83%a7%e5%bd%95%e9%95%9c%e5%83%8f" class="nav-烧录镜像">
+									烧录镜像
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://www.mikeshi.me/">
+            Mike Shi Blog
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://www.mikeshi.me/">
+        <div class="single-column-header-title">Mike Shi Blog</div>
+        
+        <div class="single-column-header-subtitle">Mike Shi的技术自留地</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    如何对一个SD CARD的镜像进行瘦身
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-08-02 17:38
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C">编程经验</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/raspberrypi">raspberrypi</a>
+                                &nbsp;
+                            
+                                <a href="/tags/image">image</a>
+                                &nbsp;
+                            
+                                <a href="/tags/slim-down">slim down</a>
+                                &nbsp;
+                            
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="起因">起因</h1>
+<p>当我们制作了一个树莓派，或者其他类似产品（如香橙派，R2S 等）的系统，并配置完成之后，为了灾备考虑，或者方便将配置好的系统快速分发，我们通常会做一个镜像。</p>
+<p>实际使用时，可能我们会使用较大容量的 SDCARD，但是这样做出来的镜像也会和 SDCARD 的容量一样大，比如 16G 甚至 32G，而实际上刚刚做好的系统，实际可能占用空间才 2，3G 大小。那么这样就会出现两个问题：</p>
+<ol>
+<li>分发不利，动辄 16G 甚至 32G，网上传送很耗时间。</li>
+<li>无法烧录到小容量的 SDCARD 上，如果上面的传输问题，还可以使用压缩工具有效解决，但是镜像的大小决定了它能烧录的最小容量，比如 16G 的镜像，只能烧录到至少 16G 大小的 SDCARD，即使系统实际只占用 3G，也无法烧录到 4G 或者 8G 的 SDCARD 中。</li>
+</ol>
+<p>为了解决以上问题，我们提供以下解决方案。</p>
+<h1 id="解决方案">解决方案</h1>
+<h2 id="镜像提取">镜像提取</h2>
+<p>在 Linux 环境下，其实将 SDCARD 的内容提取为一个镜像非常容易，只需先找到该镜像所属的设备文件即可，通常为<code>/dev/sdc</code>这类的。</p>
+<p>无法确定到底是哪个时，可以建立一个目录，然后使用<code>mount</code>命令，将设备加载到该目录，再进入该目录，根据内容确认是否为该设备。注意，<code>/dev/sdc</code>只是该设备，也就是 SDCARD，实际内容在 SD 卡的某个分区上，所以<code>mount</code>时需要指定特定分区，比如新建的目录为<code>/test</code>，假设<code>/dev/sdc</code>是目标 SD 卡，那么命令就应该是类似于<code>sudo mount /dev/sdc1 /test</code>这样的，其中<code>/dev/sdc1</code>就是 sdc 上的第一个分区，如果有多个分区可能会有 2，3，4 等数字。</p>
+<p>当然，其实还有一个简单的方法，就是在通过插拔 SDCARD 读卡器，根据<code>/dev</code>目录下相应的设备文件的有无来判断那个文件夹代表该 SDCARD。</p>
+<p>当确定好哪个设备是目标 SD 卡后，使用<code>dd</code>命令，将该设备作为数据源，即可将整个 SDCARD 的内容都写到某个文件中。<strong>这里需要注意的是</strong>，如果之前已经 mount 到某个目录了，那么需要先使用<code>umount</code>命令进行卸载，如<code>sudo umount /test</code>，然后再执行<code>dd命令</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>/dev/sdc of<span style="color:#f92672">=</span>~/sd-card-copy.img bs<span style="color:#f92672">=</span>1M status<span style="color:#f92672">=</span>progress
+</span></span></code></pre></div><p>如此一来，就会将 SD 卡的内容写到 HOME 目录下的<code>sd-card-copy.img</code>文件中了。其中的<code>bs=1M</code>是指定每次读写都是 1M，这样可以加快速度（你也可以适当调整提高效率，如 4M），<code>status=progress</code>是在操作时显示进度信息。</p>
+<h2 id="镜像瘦身">镜像瘦身</h2>
+<p>如<strong>起因</strong>一章所说，单单只做镜像提取操作，生成的文件大小与 SD 卡的容量一致，显然太大了。所以我们还要将镜像瘦身到实际大小，方便分发，也使得小容量 SDCARD 也能烧录。
+其实网上可以找到很多文章，介绍如何对 SDCARD 进行瘦身，但是其实这会造成另一个比较大的问题，那就是瘦身完成后的镜像，你再烧录到新的 SDCARD 后，会发现你的文件系统的容量就是你的镜像大小，其他的容量都是未分配状态。
+这又使得你必须在烧录好 SDCARD 后，然后再对这个卡进行扩容，使得可以使用整张卡的容量。
+整个过程非常复杂，且每备份复原一次，都要重复镜像瘦身，然后再对 SDCARD 扩容，非常繁琐。
+幸好已经有大神做好了脚本，直接使用即可。</p>
+<p>从 <a href="https://github.com/Drewsif/PiShrink">https://github.com/Drewsif/PiShrink</a> 下载 PiShrink 这个脚本，然后执行即可。它支持以下功能：</p>
+<ol>
+<li>对目标镜像瘦身</li>
+<li>当烧录好之后，在第一次启动时，可以自动扩容到整张 SD 卡的容量</li>
+<li>可以将瘦身后的镜像再进行压缩 ，格式可以选择 gzip 或 xz</li>
+<li>压缩时可以选择多核并行压缩，提高压缩效率</li>
+<li>可以选择在瘦身的同时，删除系统日志, apt archives,DHCP 租赁信息和 ssh hostkeys，减少关键信息泄露的风险</li>
+<li>可以对启动失败的镜像，尝试高级修复</li>
+</ol>
+<p>使用方法也很简单</p>
+<h3 id="安装-pishrink">安装 PiShrink</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>wget https://raw.githubusercontent.com/Drewsif/PiShrink/master/pishrink.sh
+</span></span><span style="display:flex;"><span>chmod +x pishrink.sh
+</span></span><span style="display:flex;"><span>sudo mv pishrink.sh /usr/local/bin
+</span></span></code></pre></div><h3 id="使用-pishrink">使用 PiShrink</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo pishrink.sh ~/sd-card-copy.img
+</span></span></code></pre></div><p>可以提供以下参数</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>  -s         在该镜像启动后不自动扩容文件系统
+</span></span><span style="display:flex;"><span>  -v         显示详细信息
+</span></span><span style="display:flex;"><span>  -r         如果正常启动失败，启用高级修复工具尝试修复
+</span></span><span style="display:flex;"><span>  -z         镜像瘦身后使用gzip进行压缩
+</span></span><span style="display:flex;"><span>  -Z         镜像瘦身后使用xz进行压缩
+</span></span><span style="display:flex;"><span>  -a         使用多核进行并行压缩
+</span></span><span style="display:flex;"><span>  -p         删除系统日志, apt archives, dhcp租赁文件和ssh hostkeys
+</span></span><span style="display:flex;"><span>  -d         将debug信息写入日志文件
+</span></span></code></pre></div><p>一般会用到的是<code>-p</code>或者其他一些压缩相关参数。</p>
+<h1 id="烧录镜像">烧录镜像</h1>
+<p>镜像烧录在 Linux 下也很简单，还是使用<code>dd</code>命令，只是将<code>if</code>和<code>of</code>进行翻转即可。当然，也需要事先确认那个设备文件是 SDCARD。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>dd <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>~/sd-card-copy.img of<span style="color:#f92672">=</span>/dev/sdc bs<span style="color:#f92672">=</span>1M status<span style="color:#f92672">=</span>progress
+</span></span></code></pre></div><p>然后再将该 SDCARD 放入目标设备，看看是否能正常启动即可。除非在对镜像瘦身时设定了<code>-s</code>参数，否则第一次启动由于需要对文件系统扩容，会相对慢一点儿，需要稍微等待一会儿。
+如果一切 OK，那么就说明 SDCARD 烧录正常了。</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2024-08-02</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			下回<br>已经到头啦。
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/enable-jcef-on-android-studio/">
+			上回<br>如何在Android studio上启用JCEF
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://www.mikeshi.me/">
+    
+        <div class="nav-title">
+            Mike Shi Blog
+        </div>
+        
+        <div class="nav-subtitle">
+            Mike Shi的技术自留地
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                📋归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                🗃分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                🏷标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                📶 RSS
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2024 Mike Shi Blog
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    <div class="toc-wrapper">
+        
+
+        
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b5%b7%e5%9b%a0" class="nav-起因">
+									起因
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88" class="nav-解决方案">
+									解决方案
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e9%95%9c%e5%83%8f%e6%8f%90%e5%8f%96" class="nav-镜像提取">
+									镜像提取
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%95%9c%e5%83%8f%e7%98%a6%e8%ba%ab" class="nav-镜像瘦身">
+									镜像瘦身
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%ae%89%e8%a3%85-pishrink" class="nav-安装-pishrink">
+									安装 PiShrink
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8-pishrink" class="nav-使用-pishrink">
+									使用 PiShrink
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#%e7%83%a7%e5%bd%95%e9%95%9c%e5%83%8f" class="nav-烧录镜像">
+									烧录镜像
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
+    </div>
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
+            :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div id="single-column-footer">
+Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
+<br>
+移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
+<br>
+
+&copy;
+	
+	2024 Mike Shi Blog
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script></body>
+</html>
