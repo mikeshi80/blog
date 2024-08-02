@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Mike Shi Blog</title>
-    <link>https://www.mikeshi.me/posts/</link>
-    <description>Recent content in Posts on Mike Shi Blog</description>
+    <title>PyTorch on Mike Shi Blog</title>
+    <link>https://www.mikeshi.me/tags/pytorch/</link>
+    <description>Recent content in PyTorch on Mike Shi Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 01 Aug 2024 17:12:13 +0800</lastBuildDate>
-    <atom:link href="https://www.mikeshi.me/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>如何在Android studio上启用JCEF</title>
-      <link>https://www.mikeshi.me/posts/enable-jcef-on-android-studio/</link>
-      <pubDate>Thu, 01 Aug 2024 17:12:13 +0800</pubDate>
-      <guid>https://www.mikeshi.me/posts/enable-jcef-on-android-studio/</guid>
-      <description>Android studio中默认是无法调用JCEF的功能的，这造成了很多使用了该特性的插件无法使用，本文将介绍如何启用JCEF。</description>
-    </item>
+    <lastBuildDate>Tue, 30 Jul 2024 14:52:42 +0800</lastBuildDate>
+    <atom:link href="https://www.mikeshi.me/tags/pytorch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在Jetson上安装vLLM</title>
       <link>https://www.mikeshi.me/posts/vllm-on-jetson/</link>

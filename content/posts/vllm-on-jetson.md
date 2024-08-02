@@ -1,6 +1,8 @@
 +++
 title = '在Jetson上安装vLLM'
 date = 2024-07-30T14:52:42+08:00
+categories = '编程经验'
+tags = ["Jetson", "PyTorch", "vLLM"]
 summary = '如果想用 vllm，官方提供的 PyTorch 二进制安装包是不行的，因为它需要用到 distributed 以及 NCCL 的支持，官方提供的包中是不包含这些特性的，甚至一些民间爱好者提供的安装包也只支持了 distributed 而未支持 NCCL，所以需要自行安装。本文介绍了如何在 Jetson Orin AGX 下编译相关 vLLM 软件。'
 +++
 

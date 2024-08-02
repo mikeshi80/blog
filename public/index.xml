@@ -2,23 +2,68 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mike Shi Blog</title>
-    <link>http://localhost:1313/</link>
+    <link>https://www.mikeshi.me/</link>
     <description>Recent content on Mike Shi Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 30 Jul 2024 14:52:42 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Aug 2024 17:12:13 +0800</lastBuildDate>
     
-        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://www.mikeshi.me/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>如何在Android studio上启用JCEF</title>
+        <link>https://www.mikeshi.me/posts/enable-jcef-on-android-studio/</link>
+        <pubDate>Thu, 01 Aug 2024 17:12:13 +0800</pubDate>
+        
+        <guid>https://www.mikeshi.me/posts/enable-jcef-on-android-studio/</guid>
+        <description>Mike Shi Blog https://www.mikeshi.me/posts/enable-jcef-on-android-studio/ -&lt;h1 id=&#34;起因&#34;&gt;起因&lt;/h1&gt;
+&lt;p&gt;之前为了方便在公司内部环境，使用大语言模型提供的功能，提高开发效率，所以开发了相应的插件，一个是 VSCode 的，一个是 Jetbrains 的 Intellij 系 IDE 的（如 Intellij IDEA，Pycharm 等）。
+由于 VSCode 是一个基于前端技术开发的应用，所以在与大语言模型的交互上就直接使用了 Web 前端技术。&lt;/p&gt;
+&lt;p&gt;而当时在 IDEA，一开始是使用 JEditorPane 来作为显示对话内容的控件，但这个控件只支持简单的 HTML 和 CSS，而不支持 Javascript。这就造成了 Intellij 系插件与 VSCode 的插件在实现上不一样了。&lt;/p&gt;
+&lt;p&gt;后期为了统一使用前端技术，降低开发成本，所以在 IDEA 中使用 JCEF（Java Chromium Embedded Framework）来作为显示对话内容的控件，这样就可以支持 Javascript 了，两套代码可以共同维护，也方便了 IDEA 和 VSCode 的插件的维护。&lt;/p&gt;
+&lt;p&gt;其他的一切都很顺利，直到有人想把我这个插件安装在 Android studio 上，竟然发现窗口无法显示其中内容。&lt;/p&gt;
+&lt;h1 id=&#34;原因&#34;&gt;原因&lt;/h1&gt;
+&lt;p&gt;其实原因在于，出于某种原因，Android studio 中默认是无法调用 JCEF 的功能的。这个因为启动 Android 的 JRE 是一个特殊版本，不支持 JCEF，所以需要手动启用 JCEF。&lt;/p&gt;
+&lt;h1 id=&#34;解决方案&#34;&gt;解决方案&lt;/h1&gt;
+&lt;p&gt;可以在启动了 Android studio 之后，通过菜单“Help” -&amp;gt; &amp;ldquo;Find Action&amp;rdquo;（也可以通过快捷键 Ctrl+Shift+A），在弹出的搜索框中输入“Choose Boot Java Runtime for the IDE”，然后在弹出的对话框中&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+&lt;figure align=&#34;center&#34; role=&#34;group&#34; aria-describedby=&#34;caption-cfb580a6b86b52d68aeb5466684a0ef8&#34;&gt;
+  &lt;a href=&#34;https://www.mikeshi.me/posts/enable-jcef-on-android-studio/boot-jre.png&#34; class=&#34;img-link&#34;&gt;
+    &lt;img src=&#34;https://www.mikeshi.me/posts/enable-jcef-on-android-studio/boot-jre_hu1792499f17a1601444a78e7fd6c8b556_50492_500x0_resize_box_3.png&#34;&gt;
+  &lt;/a&gt;
+  &lt;figcaption id=&#34;caption-cfb580a6b86b52d68aeb5466684a0ef8&#34;&gt;
+    更新启动JAR
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;点击 New 的下拉选择框，选第一个名字最后带“with JCEF”的选项，然后点击 OK。&lt;/p&gt;
+&lt;p&gt;这时不要直接关闭或者重启 IDE，后台 IDE 会自动下载刚才选择的 JRE，等下载后系统会要求重启，重启 Android Studio 后，就有 JCEF 的支持了，可以再打开插件窗口确认是否正常运行了。&lt;/p&gt;
+- https://www.mikeshi.me/posts/enable-jcef-on-android-studio/ - </description>
+        </item>
     
     
     
         <item>
         <title>在Jetson上安装vLLM</title>
-        <link>http://localhost:1313/posts/vllm-on-jetson/</link>
+        <link>https://www.mikeshi.me/posts/vllm-on-jetson/</link>
         <pubDate>Tue, 30 Jul 2024 14:52:42 +0800</pubDate>
         
-        <guid>http://localhost:1313/posts/vllm-on-jetson/</guid>
-        <description>Mike Shi Blog http://localhost:1313/posts/vllm-on-jetson/ -&lt;h1 id=&#34;jetson-orin-agx-下编译相关-vllm-软件&#34;&gt;Jetson Orin AGX 下编译相关 vLLM 软件&lt;/h1&gt;
+        <guid>https://www.mikeshi.me/posts/vllm-on-jetson/</guid>
+        <description>Mike Shi Blog https://www.mikeshi.me/posts/vllm-on-jetson/ -&lt;h1 id=&#34;jetson-orin-agx-下编译相关-vllm-软件&#34;&gt;Jetson Orin AGX 下编译相关 vLLM 软件&lt;/h1&gt;
 &lt;h1 id=&#34;编译-pytorch&#34;&gt;编译 PyTorch&lt;/h1&gt;
 &lt;p&gt;如果想用 vllm，官方提供的 PyTorch 二进制安装包是不行的，因为它需要用到 distributed 以及 NCCL 的支持，官方提供的包中是不包含这些特性的，甚至一些民间爱好者提供的安装包也只支持了 distributed 而未支持 NCCL，所以需要自行安装。&lt;/p&gt;
 &lt;h2 id=&#34;下载必要的工具&#34;&gt;下载必要的工具&lt;/h2&gt;
@@ -91,7 +136,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python setup.py bdist_wheel
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样就会在 dist 目录下生成二进制安装包，然后进入该目录，执行&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install xxx.whl &lt;span style=&#34;color:#75715e&#34;&gt;# xxx为该安装包名称&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- http://localhost:1313/posts/vllm-on-jetson/ - </description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://www.mikeshi.me/posts/vllm-on-jetson/ - </description>
         </item>
     
     

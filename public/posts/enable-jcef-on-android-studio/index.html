@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html><head>
-	<meta name="generator" content="Hugo 0.129.0">
-<title>Mike Shi Blog</title>
+<title>如何在Android studio上启用JCEF</title>
 
 
-
-  
 
 
 <meta charset="utf-8">
@@ -60,6 +57,8 @@
 
 
 
+      <script src="/js/toc.js"></script>
+    
     <link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
 
 <link rel="stylesheet" href="/scss/dark-mode.min.cb53f1bee2b8900cb4f082afbf00175d6618f281cf9a2fe8619e3b52d20b5721.css" integrity="sha256-y1PxvuK4kAy08IKvvwAXXWYY8oHPmi/oYZ47UtILVyE=" media="screen">
@@ -98,9 +97,11 @@
                 
                 
                 
+                    
                 
                 
-                <a class="a-block drawer-menu-item false" href="/posts">
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
                     归档
                 </a>
                 
@@ -135,6 +136,78 @@
                 </a>
                 
             
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b5%b7%e5%9b%a0" class="nav-起因">
+									起因
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8e%9f%e5%9b%a0" class="nav-原因">
+									原因
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88" class="nav-解决方案">
+									解决方案
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
             
         </div>
     </div>
@@ -176,73 +249,130 @@
             <div id="content">
                 <div id="streamContainer" class="stream-container">
 
-    <div class="post-list-container post-list-container-no-background">
-        
-        
-            <a href="/posts/enable-jcef-on-android-studio/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-divider">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                如何在Android studio上启用JCEF
-                            </div>
-                            <div class="post-item-summary">
-                                
-                                    Android studio中默认是无法调用JCEF的功能的，这造成了很多使用了该特性的插件无法使用，本文将介绍如何启用JCEF。
-                                
-                            </div>
-                            <div class="post-item-meta">
-    2024-08-01
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
 
-                        </div>
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    如何在Android studio上启用JCEF
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2024-08-01 17:12
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C">编程经验</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/android">Android</a>
+                                &nbsp;
+                            
+                                <a href="/tags/jcef">JCEF</a>
+                                &nbsp;
+                            
                         
                         
                     </div>
                 </div>
-        
-            <a href="/posts/vllm-on-jetson/" class="a-block">
-                <div class="post-item-wrapper">
-                    <div class="post-item post-item-no-divider">
-                        <div class="post-item-info-wrapper">
-                            <div class="post-item-title">
-                                在Jetson上安装vLLM
-                            </div>
-                            <div class="post-item-summary">
-                                
-                                    如果想用 vllm，官方提供的 PyTorch 二进制安装包是不行的，因为它需要用到 distributed 以及 NCCL 的支持，官方提供的包中是不包含这些特性的，甚至一些民间爱好者提供的安装包也只支持了 distributed 而未支持 NCCL，所以需要自行安装。本文介绍了如何在 Jetson Orin AGX 下编译相关 vLLM 软件。
-                                
-                            </div>
-                            <div class="post-item-meta">
-    2024-07-30
-    &emsp;
-    
-    
-    
-    &emsp;
-    
-</div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <h1 id="起因">起因</h1>
+<p>之前为了方便在公司内部环境，使用大语言模型提供的功能，提高开发效率，所以开发了相应的插件，一个是 VSCode 的，一个是 Jetbrains 的 Intellij 系 IDE 的（如 Intellij IDEA，Pycharm 等）。
+由于 VSCode 是一个基于前端技术开发的应用，所以在与大语言模型的交互上就直接使用了 Web 前端技术。</p>
+<p>而当时在 IDEA，一开始是使用 JEditorPane 来作为显示对话内容的控件，但这个控件只支持简单的 HTML 和 CSS，而不支持 Javascript。这就造成了 Intellij 系插件与 VSCode 的插件在实现上不一样了。</p>
+<p>后期为了统一使用前端技术，降低开发成本，所以在 IDEA 中使用 JCEF（Java Chromium Embedded Framework）来作为显示对话内容的控件，这样就可以支持 Javascript 了，两套代码可以共同维护，也方便了 IDEA 和 VSCode 的插件的维护。</p>
+<p>其他的一切都很顺利，直到有人想把我这个插件安装在 Android studio 上，竟然发现窗口无法显示其中内容。</p>
+<h1 id="原因">原因</h1>
+<p>其实原因在于，出于某种原因，Android studio 中默认是无法调用 JCEF 的功能的。这个因为启动 Android 的 JRE 是一个特殊版本，不支持 JCEF，所以需要手动启用 JCEF。</p>
+<h1 id="解决方案">解决方案</h1>
+<p>可以在启动了 Android studio 之后，通过菜单“Help” -&gt; &ldquo;Find Action&rdquo;（也可以通过快捷键 Ctrl+Shift+A），在弹出的搜索框中输入“Choose Boot Java Runtime for the IDE”，然后在弹出的对话框中</p>
 
-                        </div>
-                        
-                        
-                    </div>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<figure align="center" role="group" aria-describedby="caption-cfb580a6b86b52d68aeb5466684a0ef8">
+  <a href="/posts/enable-jcef-on-android-studio/boot-jre.png" class="img-link">
+    <img src="/posts/enable-jcef-on-android-studio/boot-jre_hu1792499f17a1601444a78e7fd6c8b556_50492_500x0_resize_box_3.png">
+  </a>
+  <figcaption id="caption-cfb580a6b86b52d68aeb5466684a0ef8">
+    更新启动JAR
+  </figcaption>
+</figure>
+<p>点击 New 的下拉选择框，选第一个名字最后带“with JCEF”的选项，然后点击 OK。</p>
+<p>这时不要直接关闭或者重启 IDE，后台 IDE 会自动下载刚才选择的 JRE，等下载后系统会要求重启，重启 Android Studio 后，就有 JCEF 的支持了，可以再打开插件窗口确认是否正常运行了。</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2024-08-01</p>
+                    
                 </div>
-        
-        </a>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			下回<br>已经到头啦。
+                </a>
+                
+                
+                
+                <a class="older-posts" href="/posts/vllm-on-jetson/">
+			上回<br>在Jetson上安装vLLM
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
     </div>
 
 
                     </div>
             </div><div id="sideContainer" class="side-container">
     
-    <a class="a-block nav-head active" href="https://www.mikeshi.me/">
+    <a class="a-block nav-head false" href="https://www.mikeshi.me/">
     
         <div class="nav-title">
             Mike Shi Blog
@@ -260,9 +390,11 @@
             
             
             
+                
             
             
-            <a class="a-block nav-link-item false" href="/posts">
+            
+            <a class="a-block nav-link-item active" href="/posts">
                 归档
             </a>
             
@@ -320,6 +452,78 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
         
 
         
+        <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目录 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%b5%b7%e5%9b%a0" class="nav-起因">
+									起因
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%8e%9f%e5%9b%a0" class="nav-原因">
+									原因
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88" class="nav-解决方案">
+									解决方案
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+        
     </div>
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top"
@@ -336,13 +540,8 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
         </a>
         
         
-        
-        
     </div>
 </div>
-
-
-
 
 <div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://risehere.net/">Rise</a>
