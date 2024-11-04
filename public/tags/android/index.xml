@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on Mike Shi Blog</title>
-    <link>https://www.mikeshi.me/tags/android/</link>
+    <link>http://localhost:1313/tags/android/</link>
     <description>Recent content in Android on Mike Shi Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 01 Aug 2024 17:12:13 +0800</lastBuildDate>
-    <atom:link href="https://www.mikeshi.me/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/android/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何在Android studio上启用JCEF</title>
-      <link>https://www.mikeshi.me/posts/enable-jcef-on-android-studio/</link>
+      <link>http://localhost:1313/posts/enable-jcef-on-android-studio/</link>
       <pubDate>Thu, 01 Aug 2024 17:12:13 +0800</pubDate>
-      <guid>https://www.mikeshi.me/posts/enable-jcef-on-android-studio/</guid>
+      <guid>http://localhost:1313/posts/enable-jcef-on-android-studio/</guid>
       <description>Android studio中默认是无法调用JCEF的功能的，这造成了很多使用了该特性的插件无法使用，本文将介绍如何启用JCEF。</description>
     </item>
   </channel>

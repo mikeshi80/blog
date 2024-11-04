@@ -2,31 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Mike Shi Blog</title>
-    <link>https://www.mikeshi.me/posts/</link>
+    <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on Mike Shi Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 02 Aug 2024 17:38:10 +0800</lastBuildDate>
-    <atom:link href="https://www.mikeshi.me/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Nov 2024 13:49:57 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PDM使用小结</title>
+      <link>http://localhost:1313/posts/how-to-use-pdm/</link>
+      <pubDate>Mon, 04 Nov 2024 13:49:57 +0800</pubDate>
+      <guid>http://localhost:1313/posts/how-to-use-pdm/</guid>
+      <description>PDM 使用小结 安装 安装 PDM 只需要安装官网上的说明即可，但有时因为 raw.githubcontent.com 域名会被 DNS 污染，所以需要单独下载安装脚本进行安装。&#xA;从pdm/install-pdm.py at main · pdm-project/pdm (github.com) 下载该文件后，执行&#xA;python install-pdm.py 就应该能正常安装了，如果是 Windows 系统，需要 PowerShell 窗口执行，但默认 PS 没有执行外来脚本的权限，需要执行&#xA;Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser 设置使用国内源 pdm config pypi.url https://pypi.tuna.tsinghua.edu.cn/simple 安装 Python PDM 包管理器支持多版本 Python 的选择，可以使用&#xA;pdm python install 3.11 来安装 Python 版本。这里 3.11 可以替换成其他的版本。可以使用&#xA;pdm python install -l 来打印所有支持安装的版本。&#xA;pdm python list 则可以显示当前系统已经安装的 Python 版本。&#xA;选用 Python 版本 使用&#xA;pdm use 3.11 即可</description>
+    </item>
     <item>
       <title>如何对一个SD CARD的镜像进行瘦身</title>
-      <link>https://www.mikeshi.me/posts/how-to-slim-down-sdcard-image/</link>
+      <link>http://localhost:1313/posts/how-to-slim-down-sdcard-image/</link>
       <pubDate>Fri, 02 Aug 2024 17:38:10 +0800</pubDate>
-      <guid>https://www.mikeshi.me/posts/how-to-slim-down-sdcard-image/</guid>
+      <guid>http://localhost:1313/posts/how-to-slim-down-sdcard-image/</guid>
       <description>本文介绍了如果制作一个树莓派或类似产品的系统镜像，并对其进行瘦身，以便在更小尺寸SDCARD上使用。</description>
     </item>
     <item>
       <title>如何在Android studio上启用JCEF</title>
-      <link>https://www.mikeshi.me/posts/enable-jcef-on-android-studio/</link>
+      <link>http://localhost:1313/posts/enable-jcef-on-android-studio/</link>
       <pubDate>Thu, 01 Aug 2024 17:12:13 +0800</pubDate>
-      <guid>https://www.mikeshi.me/posts/enable-jcef-on-android-studio/</guid>
+      <guid>http://localhost:1313/posts/enable-jcef-on-android-studio/</guid>
       <description>Android studio中默认是无法调用JCEF的功能的，这造成了很多使用了该特性的插件无法使用，本文将介绍如何启用JCEF。</description>
     </item>
     <item>
       <title>在Jetson上安装vLLM</title>
-      <link>https://www.mikeshi.me/posts/vllm-on-jetson/</link>
+      <link>http://localhost:1313/posts/vllm-on-jetson/</link>
       <pubDate>Tue, 30 Jul 2024 14:52:42 +0800</pubDate>
-      <guid>https://www.mikeshi.me/posts/vllm-on-jetson/</guid>
+      <guid>http://localhost:1313/posts/vllm-on-jetson/</guid>
       <description>如果想用 vllm，官方提供的 PyTorch 二进制安装包是不行的，因为它需要用到 distributed 以及 NCCL 的支持，官方提供的包中是不包含这些特性的，甚至一些民间爱好者提供的安装包也只支持了 distributed 而未支持 NCCL，所以需要自行安装。本文介绍了如何在 Jetson Orin AGX 下编译相关 vLLM 软件。</description>
     </item>
   </channel>

@@ -2,23 +2,55 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mike Shi Blog</title>
-    <link>https://www.mikeshi.me/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Mike Shi Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 02 Aug 2024 17:38:10 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 04 Nov 2024 13:49:57 +0800</lastBuildDate>
     
-        <atom:link href="https://www.mikeshi.me/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>PDM使用小结</title>
+        <link>http://localhost:1313/posts/how-to-use-pdm/</link>
+        <pubDate>Mon, 04 Nov 2024 13:49:57 +0800</pubDate>
+        
+        <guid>http://localhost:1313/posts/how-to-use-pdm/</guid>
+        <description>Mike Shi Blog http://localhost:1313/posts/how-to-use-pdm/ -&lt;h1 id=&#34;pdm-使用小结&#34;&gt;PDM 使用小结&lt;/h1&gt;
+&lt;h1 id=&#34;安装&#34;&gt;安装&lt;/h1&gt;
+&lt;p&gt;安装 PDM 只需要安装官网上的说明即可，但有时因为 &lt;a href=&#34;https://raw.githubcontent.com/&#34;&gt;raw.githubcontent.com&lt;/a&gt; 域名会被 DNS 污染，所以需要单独下载安装脚本进行安装。&lt;/p&gt;
+&lt;p&gt;从&lt;a href=&#34;https://github.com/pdm-project/pdm/blob/main/install-pdm.py&#34;&gt;pdm/install-pdm.py at main · pdm-project/pdm (github.com)&lt;/a&gt; 下载该文件后，执行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python install-pdm.py
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;就应该能正常安装了，如果是 Windows 系统，需要 PowerShell 窗口执行，但默认 PS 没有执行外来脚本的权限，需要执行&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;设置使用国内源&#34;&gt;设置使用国内源&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pdm config pypi.url https://pypi.tuna.tsinghua.edu.cn/simple
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;安装-python&#34;&gt;安装 Python&lt;/h1&gt;
+&lt;p&gt;PDM 包管理器支持多版本 Python 的选择，可以使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pdm python install 3.11
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;来安装 Python 版本。这里 3.11 可以替换成其他的版本。可以使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pdm python install -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;来打印所有支持安装的版本。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pdm python list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;则可以显示当前系统已经安装的 Python 版本。&lt;/p&gt;
+&lt;h1 id=&#34;选用-python-版本&#34;&gt;选用 Python 版本&lt;/h1&gt;
+&lt;p&gt;使用&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pdm use 3.11
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;即可&lt;/p&gt;
+- http://localhost:1313/posts/how-to-use-pdm/ - </description>
+        </item>
     
     
     
         <item>
         <title>如何对一个SD CARD的镜像进行瘦身</title>
-        <link>https://www.mikeshi.me/posts/how-to-slim-down-sdcard-image/</link>
+        <link>http://localhost:1313/posts/how-to-slim-down-sdcard-image/</link>
         <pubDate>Fri, 02 Aug 2024 17:38:10 +0800</pubDate>
         
-        <guid>https://www.mikeshi.me/posts/how-to-slim-down-sdcard-image/</guid>
-        <description>Mike Shi Blog https://www.mikeshi.me/posts/how-to-slim-down-sdcard-image/ -&lt;h1 id=&#34;起因&#34;&gt;起因&lt;/h1&gt;
+        <guid>http://localhost:1313/posts/how-to-slim-down-sdcard-image/</guid>
+        <description>Mike Shi Blog http://localhost:1313/posts/how-to-slim-down-sdcard-image/ -&lt;h1 id=&#34;起因&#34;&gt;起因&lt;/h1&gt;
 &lt;p&gt;当我们制作了一个树莓派，或者其他类似产品（如香橙派，R2S 等）的系统，并配置完成之后，为了灾备考虑，或者方便将配置好的系统快速分发，我们通常会做一个镜像。&lt;/p&gt;
 &lt;p&gt;实际使用时，可能我们会使用较大容量的 SDCARD，但是这样做出来的镜像也会和 SDCARD 的容量一样大，比如 16G 甚至 32G，而实际上刚刚做好的系统，实际可能占用空间才 2，3G 大小。那么这样就会出现两个问题：&lt;/p&gt;
 &lt;ol&gt;
@@ -71,18 +103,18 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;dd &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;~/sd-card-copy.img of&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/dev/sdc bs&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;1M status&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;progress
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;然后再将该 SDCARD 放入目标设备，看看是否能正常启动即可。除非在对镜像瘦身时设定了&lt;code&gt;-s&lt;/code&gt;参数，否则第一次启动由于需要对文件系统扩容，会相对慢一点儿，需要稍微等待一会儿。
 如果一切 OK，那么就说明 SDCARD 烧录正常了。&lt;/p&gt;
-- https://www.mikeshi.me/posts/how-to-slim-down-sdcard-image/ - </description>
+- http://localhost:1313/posts/how-to-slim-down-sdcard-image/ - </description>
         </item>
     
     
     
         <item>
         <title>如何在Android studio上启用JCEF</title>
-        <link>https://www.mikeshi.me/posts/enable-jcef-on-android-studio/</link>
+        <link>http://localhost:1313/posts/enable-jcef-on-android-studio/</link>
         <pubDate>Thu, 01 Aug 2024 17:12:13 +0800</pubDate>
         
-        <guid>https://www.mikeshi.me/posts/enable-jcef-on-android-studio/</guid>
-        <description>Mike Shi Blog https://www.mikeshi.me/posts/enable-jcef-on-android-studio/ -&lt;h1 id=&#34;起因&#34;&gt;起因&lt;/h1&gt;
+        <guid>http://localhost:1313/posts/enable-jcef-on-android-studio/</guid>
+        <description>Mike Shi Blog http://localhost:1313/posts/enable-jcef-on-android-studio/ -&lt;h1 id=&#34;起因&#34;&gt;起因&lt;/h1&gt;
 &lt;p&gt;之前为了方便在公司内部环境，使用大语言模型提供的功能，提高开发效率，所以开发了相应的插件，一个是 VSCode 的，一个是 Jetbrains 的 Intellij 系 IDE 的（如 Intellij IDEA，Pycharm 等）。
 由于 VSCode 是一个基于前端技术开发的应用，所以在与大语言模型的交互上就直接使用了 Web 前端技术。&lt;/p&gt;
 &lt;p&gt;而当时在 IDEA，一开始是使用 JEditorPane 来作为显示对话内容的控件，但这个控件只支持简单的 HTML 和 CSS，而不支持 Javascript。这就造成了 Intellij 系插件与 VSCode 的插件在实现上不一样了。&lt;/p&gt;
@@ -107,8 +139,8 @@
 
 
 &lt;figure align=&#34;center&#34; role=&#34;group&#34; aria-describedby=&#34;caption-cfb580a6b86b52d68aeb5466684a0ef8&#34;&gt;
-  &lt;a href=&#34;https://www.mikeshi.me/posts/enable-jcef-on-android-studio/boot-jre.png&#34; class=&#34;img-link&#34;&gt;
-    &lt;img src=&#34;https://www.mikeshi.me/posts/enable-jcef-on-android-studio/boot-jre_hu1792499f17a1601444a78e7fd6c8b556_50492_500x0_resize_box_3.png&#34;&gt;
+  &lt;a href=&#34;http://localhost:1313/posts/enable-jcef-on-android-studio/boot-jre.png&#34; class=&#34;img-link&#34;&gt;
+    &lt;img src=&#34;http://localhost:1313/posts/enable-jcef-on-android-studio/boot-jre_hu1792499f17a1601444a78e7fd6c8b556_50492_500x0_resize_box_3.png&#34;&gt;
   &lt;/a&gt;
   &lt;figcaption id=&#34;caption-cfb580a6b86b52d68aeb5466684a0ef8&#34;&gt;
     更新启动JAR
@@ -116,18 +148,18 @@
 &lt;/figure&gt;
 &lt;p&gt;点击 New 的下拉选择框，选第一个名字最后带“with JCEF”的选项，然后点击 OK。&lt;/p&gt;
 &lt;p&gt;这时不要直接关闭或者重启 IDE，后台 IDE 会自动下载刚才选择的 JRE，等下载后系统会要求重启，重启 Android Studio 后，就有 JCEF 的支持了，可以再打开插件窗口确认是否正常运行了。&lt;/p&gt;
-- https://www.mikeshi.me/posts/enable-jcef-on-android-studio/ - </description>
+- http://localhost:1313/posts/enable-jcef-on-android-studio/ - </description>
         </item>
     
     
     
         <item>
         <title>在Jetson上安装vLLM</title>
-        <link>https://www.mikeshi.me/posts/vllm-on-jetson/</link>
+        <link>http://localhost:1313/posts/vllm-on-jetson/</link>
         <pubDate>Tue, 30 Jul 2024 14:52:42 +0800</pubDate>
         
-        <guid>https://www.mikeshi.me/posts/vllm-on-jetson/</guid>
-        <description>Mike Shi Blog https://www.mikeshi.me/posts/vllm-on-jetson/ -&lt;h1 id=&#34;jetson-orin-agx-下编译相关-vllm-软件&#34;&gt;Jetson Orin AGX 下编译相关 vLLM 软件&lt;/h1&gt;
+        <guid>http://localhost:1313/posts/vllm-on-jetson/</guid>
+        <description>Mike Shi Blog http://localhost:1313/posts/vllm-on-jetson/ -&lt;h1 id=&#34;jetson-orin-agx-下编译相关-vllm-软件&#34;&gt;Jetson Orin AGX 下编译相关 vLLM 软件&lt;/h1&gt;
 &lt;h1 id=&#34;编译-pytorch&#34;&gt;编译 PyTorch&lt;/h1&gt;
 &lt;p&gt;如果想用 vllm，官方提供的 PyTorch 二进制安装包是不行的，因为它需要用到 distributed 以及 NCCL 的支持，官方提供的包中是不包含这些特性的，甚至一些民间爱好者提供的安装包也只支持了 distributed 而未支持 NCCL，所以需要自行安装。&lt;/p&gt;
 &lt;h2 id=&#34;下载必要的工具&#34;&gt;下载必要的工具&lt;/h2&gt;
@@ -200,7 +232,7 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python setup.py bdist_wheel
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样就会在 dist 目录下生成二进制安装包，然后进入该目录，执行&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install xxx.whl &lt;span style=&#34;color:#75715e&#34;&gt;# xxx为该安装包名称&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- https://www.mikeshi.me/posts/vllm-on-jetson/ - </description>
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;- http://localhost:1313/posts/vllm-on-jetson/ - </description>
         </item>
     
     

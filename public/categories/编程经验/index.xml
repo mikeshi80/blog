@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程经验 on Mike Shi Blog</title>
-    <link>https://www.mikeshi.me/categories/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/</link>
+    <link>http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/</link>
     <description>Recent content in 编程经验 on Mike Shi Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 02 Aug 2024 17:38:10 +0800</lastBuildDate>
-    <atom:link href="https://www.mikeshi.me/categories/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/%E7%BC%96%E7%A8%8B%E7%BB%8F%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何对一个SD CARD的镜像进行瘦身</title>
-      <link>https://www.mikeshi.me/posts/how-to-slim-down-sdcard-image/</link>
+      <link>http://localhost:1313/posts/how-to-slim-down-sdcard-image/</link>
       <pubDate>Fri, 02 Aug 2024 17:38:10 +0800</pubDate>
-      <guid>https://www.mikeshi.me/posts/how-to-slim-down-sdcard-image/</guid>
+      <guid>http://localhost:1313/posts/how-to-slim-down-sdcard-image/</guid>
       <description>本文介绍了如果制作一个树莓派或类似产品的系统镜像，并对其进行瘦身，以便在更小尺寸SDCARD上使用。</description>
     </item>
     <item>
       <title>如何在Android studio上启用JCEF</title>
-      <link>https://www.mikeshi.me/posts/enable-jcef-on-android-studio/</link>
+      <link>http://localhost:1313/posts/enable-jcef-on-android-studio/</link>
       <pubDate>Thu, 01 Aug 2024 17:12:13 +0800</pubDate>
-      <guid>https://www.mikeshi.me/posts/enable-jcef-on-android-studio/</guid>
+      <guid>http://localhost:1313/posts/enable-jcef-on-android-studio/</guid>
       <description>Android studio中默认是无法调用JCEF的功能的，这造成了很多使用了该特性的插件无法使用，本文将介绍如何启用JCEF。</description>
     </item>
     <item>
       <title>在Jetson上安装vLLM</title>
-      <link>https://www.mikeshi.me/posts/vllm-on-jetson/</link>
+      <link>http://localhost:1313/posts/vllm-on-jetson/</link>
       <pubDate>Tue, 30 Jul 2024 14:52:42 +0800</pubDate>
-      <guid>https://www.mikeshi.me/posts/vllm-on-jetson/</guid>
+      <guid>http://localhost:1313/posts/vllm-on-jetson/</guid>
       <description>如果想用 vllm，官方提供的 PyTorch 二进制安装包是不行的，因为它需要用到 distributed 以及 NCCL 的支持，官方提供的包中是不包含这些特性的，甚至一些民间爱好者提供的安装包也只支持了 distributed 而未支持 NCCL，所以需要自行安装。本文介绍了如何在 Jetson Orin AGX 下编译相关 vLLM 软件。</description>
     </item>
   </channel>

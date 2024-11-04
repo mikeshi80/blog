@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PyTorch on Mike Shi Blog</title>
-    <link>https://www.mikeshi.me/tags/pytorch/</link>
+    <link>http://localhost:1313/tags/pytorch/</link>
     <description>Recent content in PyTorch on Mike Shi Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 30 Jul 2024 14:52:42 +0800</lastBuildDate>
-    <atom:link href="https://www.mikeshi.me/tags/pytorch/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/pytorch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在Jetson上安装vLLM</title>
-      <link>https://www.mikeshi.me/posts/vllm-on-jetson/</link>
+      <link>http://localhost:1313/posts/vllm-on-jetson/</link>
       <pubDate>Tue, 30 Jul 2024 14:52:42 +0800</pubDate>
-      <guid>https://www.mikeshi.me/posts/vllm-on-jetson/</guid>
+      <guid>http://localhost:1313/posts/vllm-on-jetson/</guid>
       <description>如果想用 vllm，官方提供的 PyTorch 二进制安装包是不行的，因为它需要用到 distributed 以及 NCCL 的支持，官方提供的包中是不包含这些特性的，甚至一些民间爱好者提供的安装包也只支持了 distributed 而未支持 NCCL，所以需要自行安装。本文介绍了如何在 Jetson Orin AGX 下编译相关 vLLM 软件。</description>
     </item>
   </channel>

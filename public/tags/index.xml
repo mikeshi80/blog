@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Mike Shi Blog</title>
-    <link>https://www.mikeshi.me/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Mike Shi Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 02 Aug 2024 17:38:10 +0800</lastBuildDate>
-    <atom:link href="https://www.mikeshi.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Image</title>
-      <link>https://www.mikeshi.me/tags/image/</link>
+      <link>http://localhost:1313/tags/image/</link>
       <pubDate>Fri, 02 Aug 2024 17:38:10 +0800</pubDate>
-      <guid>https://www.mikeshi.me/tags/image/</guid>
+      <guid>http://localhost:1313/tags/image/</guid>
       <description></description>
     </item>
     <item>
       <title>Raspberrypi</title>
-      <link>https://www.mikeshi.me/tags/raspberrypi/</link>
+      <link>http://localhost:1313/tags/raspberrypi/</link>
       <pubDate>Fri, 02 Aug 2024 17:38:10 +0800</pubDate>
-      <guid>https://www.mikeshi.me/tags/raspberrypi/</guid>
+      <guid>http://localhost:1313/tags/raspberrypi/</guid>
       <description></description>
     </item>
     <item>
       <title>Slim Down</title>
-      <link>https://www.mikeshi.me/tags/slim-down/</link>
+      <link>http://localhost:1313/tags/slim-down/</link>
       <pubDate>Fri, 02 Aug 2024 17:38:10 +0800</pubDate>
-      <guid>https://www.mikeshi.me/tags/slim-down/</guid>
+      <guid>http://localhost:1313/tags/slim-down/</guid>
       <description></description>
     </item>
     <item>
       <title>Android</title>
-      <link>https://www.mikeshi.me/tags/android/</link>
+      <link>http://localhost:1313/tags/android/</link>
       <pubDate>Thu, 01 Aug 2024 17:12:13 +0800</pubDate>
-      <guid>https://www.mikeshi.me/tags/android/</guid>
+      <guid>http://localhost:1313/tags/android/</guid>
       <description></description>
     </item>
     <item>
       <title>JCEF</title>
-      <link>https://www.mikeshi.me/tags/jcef/</link>
+      <link>http://localhost:1313/tags/jcef/</link>
       <pubDate>Thu, 01 Aug 2024 17:12:13 +0800</pubDate>
-      <guid>https://www.mikeshi.me/tags/jcef/</guid>
+      <guid>http://localhost:1313/tags/jcef/</guid>
       <description></description>
     </item>
     <item>
       <title>Jetson</title>
-      <link>https://www.mikeshi.me/tags/jetson/</link>
+      <link>http://localhost:1313/tags/jetson/</link>
       <pubDate>Tue, 30 Jul 2024 14:52:42 +0800</pubDate>
-      <guid>https://www.mikeshi.me/tags/jetson/</guid>
+      <guid>http://localhost:1313/tags/jetson/</guid>
       <description></description>
     </item>
     <item>
       <title>PyTorch</title>
-      <link>https://www.mikeshi.me/tags/pytorch/</link>
+      <link>http://localhost:1313/tags/pytorch/</link>
       <pubDate>Tue, 30 Jul 2024 14:52:42 +0800</pubDate>
-      <guid>https://www.mikeshi.me/tags/pytorch/</guid>
+      <guid>http://localhost:1313/tags/pytorch/</guid>
       <description></description>
     </item>
     <item>
       <title>VLLM</title>
-      <link>https://www.mikeshi.me/tags/vllm/</link>
+      <link>http://localhost:1313/tags/vllm/</link>
       <pubDate>Tue, 30 Jul 2024 14:52:42 +0800</pubDate>
-      <guid>https://www.mikeshi.me/tags/vllm/</guid>
+      <guid>http://localhost:1313/tags/vllm/</guid>
       <description></description>
     </item>
   </channel>
